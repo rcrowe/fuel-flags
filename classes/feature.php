@@ -20,42 +20,42 @@ namespace Feature;
 *
 * Feature::flag('google_analytics')->ip_address('192.168.1.10');
 *
-* @package	Feature
-* @version	1.0
-* @author	Rob Crowe
-* @link		http://vivalacrowe.com
+* @package  Feature
+* @version  1.0
+* @author   Rob Crowe
+* @link     http://vivalacrowe.com
 */
 class Feature {
-	
-	/**
-	 * @var  Array  Stores an instance of Feature_Flags for each flag
-	 */
-	protected static $instances = array();
-	
-	/**
-	 * Called by Fuel when package is loaded. Loads config file.
-	 */
-	public static function _init()
-	{
-		// Load feature config file
-		\Config::load('feature', true);
-	}
-	
-	/**
-	 * Return an instance of a Flag to check against
-	 *
-	 * @return Feature\Feature_Flag
-	 */
-	public static function flag($flag)
-	{
-		// Have we already looked for flag before?
-		if(!array_key_exists($flag, static::$instances))
-		{
-			static::$instances[$flag] = new Feature_Flag($flag);
-		}
-		
-		return static::$instances[$flag];
-	}
+    
+    /**
+     * @var  Array  Stores an instance of Feature_Flags for each flag
+     */
+    protected static $instances = array();
+    
+    /**
+     * Called by Fuel when package is loaded. Loads config file.
+     */
+    public static function _init()
+    {
+        // Load feature config file
+        \Config::load('feature', true);
+    }
+    
+    /**
+     * Return an instance of a Flag to check against
+     *
+     * @return Feature\Feature_Flag
+     */
+    public static function flag($flag)
+    {
+        // Have we already looked for flag before?
+        if(!array_key_exists($flag, static::$instances))
+        {
+            static::$instances[$flag] = new Feature_Flag($flag);
+        }
+        
+        return static::$instances[$flag];
+    }
 }
 
 /* end of file feature/classes/feature.php */
