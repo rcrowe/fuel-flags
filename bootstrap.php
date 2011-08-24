@@ -14,9 +14,9 @@
 Autoloader::add_core_namespace('Feature');
 
 Autoloader::add_classes(array(
-	'Feature\\Feature' 			=> __DIR__.'/classes/feature.php',
-	'Feature\\FeatureException' => __DIR__.'/classes/exception.php',
-	'Feature\\Feature_Flag'		=> __DIR__.'/classes/flag.php',
+    'Feature\\Feature'          => __DIR__.'/classes/feature.php',
+    'Feature\\FeatureException' => __DIR__.'/classes/exception.php',
+    'Feature\\Feature_Flag'     => __DIR__.'/classes/flag.php',
 ));
 
 
